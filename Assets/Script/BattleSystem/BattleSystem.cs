@@ -1,15 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleSystem : MonoBehaviour
 {
+    int _currentHealth;
+
+    bool _buttonActive;
+
+    private void Start()
+    {
+        _currentHealth = MainSystem._maxHealth;
+
+        _buttonActive = true;
+    }
+
     public void ButtonDown(int buttonNumber)
     {
-        switch (buttonNumber)
+        if (_buttonActive)
         {
-            case 0:
-                break;
+            switch (buttonNumber)
+            {
+                case 0:
+                    break;
+            }
         }
+    }
+
+    public void Heal(int healAmount)
+    {
+        _currentHealth += healAmount;
+    }
+
+    public void HitDamage(int damage)
+    {
+        _currentHealth -= damage;
     }
 }
