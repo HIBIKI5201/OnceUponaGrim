@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class MainSystem : MonoBehaviour
 {
-    string _playerName;
-    int _level;
-    int _maxHealth;
-
-    void Start()
-    {
-        
-    }
+    public static string _playerName;
+    public static int _level;
+    public static int _maxHealth;
+    public static List<int> _materials;
 
     public void DataSave()
     {
         // インスタンスを作る
 
-        SaveData saveData = new SaveData(_playerName, _level, _maxHealth);
+        SaveData saveData = new(_playerName, _level, _maxHealth, _materials);
 
         // インスタンス変数を JSON にシリアル化する
         string json = JsonUtility.ToJson(saveData);
@@ -34,7 +30,7 @@ public class MainSystem : MonoBehaviour
         SaveData saveData = JsonUtility.FromJson<SaveData>(json);
         // 画面に表示する
         string status = "Name: " + saveData.Name + "\r\nLevel: " + saveData.Level
-            + "\r\nHP: " + saveData.MaxHp;
+            + "\r\nHP: " + saveData.MaxHp + saveData.Materials;
         Debug.Log(status);
     }
 }
