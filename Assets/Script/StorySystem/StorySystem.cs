@@ -4,7 +4,52 @@ using UnityEngine.UI;
 
 public class StorySystem : MonoBehaviour
 {
+    [SerializeField]
     Text textBox;
+
+    [Header("オブジェクト")]
+    [SerializeField]
+    GameObject player;
+
+    [SerializeField]
+    GameObject grim;
+
+    [SerializeField]
+    GameObject palpal;
+
+    [SerializeField]
+    GameObject otherOne;
+    [SerializeField]
+    string otherOneName;
+    static string OtherOneName;
+
+
+    [SerializeField]
+    GameObject otherTwo;
+    [SerializeField]
+    string otherTwoName;
+    static string OtherTwoName;
+
+    enum Character
+    {
+        player,
+        grim,
+        palpal,
+        otherOne,
+        otherTwo,
+    }
+
+    [SerializeField]
+    List<Character> SayChara;
+
+    Dictionary<Character, string> CharacterNames = new()
+    { 
+        {Character.player, MainSystem._playerName },
+        {Character.grim, "グリム" },
+        {Character.palpal, "パルパル" },
+        {Character.otherOne, OtherOneName },
+        {Character.otherTwo, OtherTwoName },
+    };
 
     [SerializeField]
     List<string> text;
@@ -24,7 +69,7 @@ public class StorySystem : MonoBehaviour
         }
         else
         {
-            Debug.Log(text[textNumber]);
+            Debug.Log(CharacterNames[SayChara[textNumber]] + text[textNumber]);
             //textBox.text = text[textNumber];
         }
 
