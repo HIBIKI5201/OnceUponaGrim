@@ -509,6 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1394db63243172746bcbe79fb09e7e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
+  activeChara: 0000000000000000
   text:
   - test
   - stst

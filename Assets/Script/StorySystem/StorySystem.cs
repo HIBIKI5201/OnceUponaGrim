@@ -4,7 +4,24 @@ using UnityEngine.UI;
 
 public class StorySystem : MonoBehaviour
 {
+    [SerializeField]
     Text textBox;
+
+    enum Character
+    {
+        player,
+        grim,
+        palpal,
+        other
+    }
+
+    [SerializeField]
+    List<Character> activeChara;
+
+    Dictionary<Character, string> CharacterNames = new() 
+    { {Character.player, MainSystem._playerName },
+        {Character.grim, "ƒOƒŠƒ€" }
+    };
 
     [SerializeField]
     List<string> text;
