@@ -475,7 +475,6 @@ GameObject:
   - component: {fileID: 961475669}
   - component: {fileID: 961475671}
   - component: {fileID: 961475670}
-  - component: {fileID: 961475672}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -512,17 +511,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 0}
   characterList:
-  - characterType: player
+  - characterKind: 0
     gameObject: {fileID: 0}
-    characterName: 
-  - characterType: enemy
+    characterName: "\u30B0\u30EA\u30E0"
+  - characterKind: 1
     gameObject: {fileID: 0}
-    characterName: 
+    characterName: "\u30D1\u30EB\u30D1\u30EB"
+  - characterKind: 2
+    gameObject: {fileID: 0}
+    characterName: textKun
   textList:
-  - characterType: 
+  - characterType: 0
     text: test
-  - characterType: 
+  - characterType: 0
     text: tete
+  - characterType: 1
+    text: au
+  - characterType: 0
+    text: ne
+  - characterType: 2
+    text: weew
 --- !u!114 &961475671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,21 +543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09604a8c46d57640901eaf28f70c401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &961475672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961475668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10de922fe937b4148ad8b0d6a64e321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Buttons:
-  - {fileID: 1383514168}
-  SelectButton: 0
 --- !u!1 &1383514166
 GameObject:
   m_ObjectHideFlags: 0
