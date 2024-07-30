@@ -3,6 +3,6 @@ using System;
 [Serializable]
 public class StoryTextList
 {
-    public string characterType;
+    public StorySystem.CharacterKind characterType;
     public string text;
 }
