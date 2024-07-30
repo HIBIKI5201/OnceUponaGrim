@@ -9,56 +9,28 @@ public class StorySystem : MonoBehaviour
 
     [Header("オブジェクト")]
     [SerializeField]
-    GameObject player;
-
-    [SerializeField]
-    GameObject grim;
-
-    [SerializeField]
-    GameObject palpal;
-
-    [SerializeField]
-    GameObject otherOne;
-    [SerializeField]
-    string otherOneName;
-    static string OtherOneName;
-
-
-    [SerializeField]
-    GameObject otherTwo;
-    [SerializeField]
-    string otherTwoName;
-    static string OtherTwoName;
-
-    enum Character
+    public List<StoryCharacterList> characterList = new() 
     {
-        player,
-        grim,
-        palpal,
-        otherOne,
-        otherTwo,
-    }
-
-    [SerializeField]
-    List<Character> SayChara;
-
-    Dictionary<Character, string> CharacterNames = new()
-    { 
-        {Character.player, MainSystem._playerName },
-        {Character.grim, "グリム" },
-        {Character.palpal, "パルパル" },
-        {Character.otherOne, OtherOneName },
-        {Character.otherTwo, OtherTwoName },
+        new StoryCharacterList {characterType = "player", characterName = MainSystem._playerName}
     };
 
     [SerializeField]
-    List<string> text;
+    List<StoryTextList> textList = new();
 
+    public Dictionary<string, string> CharacterNames = new();
     int textNumber;
+
+    private void Start()
+    {
+        foreach (var character in characterList)
+        {
+            CharacterNames.Add(character.characterType, character.characterName);
+        }
+    }
 
     public void NextText()
     {
-        if (int.TryParse(text[textNumber], out int intValue))
+        if (int.TryParse(textList[textNumber].text, out int intValue))
         {
             switch (intValue)
             {
@@ -69,11 +41,13 @@ public class StorySystem : MonoBehaviour
         }
         else
         {
-            Debug.Log(CharacterNames[SayChara[textNumber]] + text[textNumber]);
+            Debug.Log(textList[textNumber].text);
             //textBox.text = text[textNumber];
         }
 
 
         textNumber++;
     }
+
+
 }
