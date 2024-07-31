@@ -520,6 +520,9 @@ MonoBehaviour:
   - characterKind: 2
     gameObject: {fileID: 0}
     characterName: textKun
+  - characterKind: 2
+    gameObject: {fileID: 0}
+    characterName: textKun
   textList:
   - characterType: 0
     text: test
@@ -529,6 +532,10 @@ MonoBehaviour:
     text: au
   - characterType: 0
     text: ne
+  - characterType: 2
+    text: weew
+  - characterType: 2
+    text: weew
   - characterType: 2
     text: weew
 --- !u!114 &961475671
