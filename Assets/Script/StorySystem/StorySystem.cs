@@ -46,6 +46,8 @@ public class StorySystem : MonoBehaviour
             }
             else { Debug.LogWarning($"{character}にオブジェクトをアサインしてください"); }
         }
+
+        if (textBox == null) { Debug.LogWarning("テキストボックスをアサインしてください"); }
     }
 
     public void NextText()
@@ -73,7 +75,6 @@ public class StorySystem : MonoBehaviour
                 {
                     textBox.text = text;
                 }
-                else { Debug.LogWarning("テキストボックスをアサインしてください"); }
 
                 break;
 

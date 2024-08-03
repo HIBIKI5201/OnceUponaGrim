@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Button.uss?fileID=7433441132597879392&amp;guid=08b3bc89f5f17524bb0a939eb832d81d&amp;type=3#Button" />
+    <ui:VisualElement name="Base" class="Base">
+        <ui:VisualElement name="Line" class="Line" />
+        <ui:Label tabindex="-1" text="home" display-tooltip-when-elided="true" name="Text" style="justify-content: center; align-self: center; color: rgb(255, 250, 56); align-items: center; flex-direction: column; top: 0; width: auto; height: 80%; -unity-text-align: middle-center; -unity-font-style: bold; white-space: nowrap; font-size: 28px;" />
+    </ui:VisualElement>
+</ui:UXML>

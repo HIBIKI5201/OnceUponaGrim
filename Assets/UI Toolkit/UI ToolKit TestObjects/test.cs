@@ -20,7 +20,6 @@ public class Test : VisualElement
         public UxmlStringAttributeDescription characterName = new UxmlStringAttributeDescription { name = "character-name", defaultValue = "Name" };
         public UxmlStringAttributeDescription description = new UxmlStringAttributeDescription { name = "description", defaultValue = "Description" };
         public UxmlAssetAttributeDescription<Texture2D> thumbnail = new UxmlAssetAttributeDescription<Texture2D> { name = "thumbnail" };
-        public UxmlAssetAttributeDescription<GameObject> storySystem = new UxmlAssetAttributeDescription<GameObject> { name = "story-system" };
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {
@@ -35,7 +34,7 @@ public class Test : VisualElement
 
     public Test()
     {
-        var treeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI Toolkit/Test.uxml");
+        var treeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI Toolkit/UI ToolKit TestObjects/Test.uxml");
         var container = treeAsset.Instantiate();
         hierarchy.Add(container);
 
