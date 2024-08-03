@@ -24,7 +24,7 @@ public class StoryTextListDrawer : PropertyDrawer
             characterTypeProp.intValue = EditorGUI.Popup(position, "Character Type", characterTypeProp.intValue, options);
         }
 
-        position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
+        position.y += EditorGUIUtility.singleLineHeight * 1.2f + EditorGUIUtility.standardVerticalSpacing;
 
         EditorGUI.PropertyField(position, kindProp, new GUIContent("Kind"));
 
@@ -37,7 +37,7 @@ public class StoryTextListDrawer : PropertyDrawer
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return EditorGUIUtility.singleLineHeight * 3 + EditorGUIUtility.standardVerticalSpacing;
+        return EditorGUIUtility.singleLineHeight * 3.5f + EditorGUIUtility.standardVerticalSpacing;
     }
 }
 #endif

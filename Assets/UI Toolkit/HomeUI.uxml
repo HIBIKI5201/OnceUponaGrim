@@ -1,8 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/HomeUI.uss?fileID=7433441132597879392&amp;guid=d9910c8448874cb469be4be8eaabbcab&amp;type=3#HomeUI" />
-    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 300px; height: 250px; top: 400px; left: auto; align-self: center; justify-content: space-evenly;">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 300px; height: 250px; top: 400px; left: auto; align-self: center; justify-content: space-evenly;">
         <ui:Button text="Start" display-tooltip-when-elided="true" name="Start" class="button" style="opacity: 1;" />
         <ui:Button text="End" display-tooltip-when-elided="true" name="End" class="button" />
         <ui:Button text="Contine" display-tooltip-when-elided="true" name="Continue" class="button" />
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" style="align-items: center; -unity-text-align: middle-center; font-size: 30px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        <ui:Button text="wow" display-tooltip-when-elided="true" class="button" />
     </ui:VisualElement>
 </ui:UXML>
