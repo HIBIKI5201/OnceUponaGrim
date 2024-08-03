@@ -1,0 +1,29 @@
+.card {
+    background-color: rgb(2, 0, 67);
+    width: 560px;
+    height: 180px;
+    flex-direction: row;
+    transition-duration: 0.2s;
+}
+
+.line {
+    background-color: rgb(0, 204, 209);
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    transition-timing-function: ease-out-circ;
+    transition-duration: 0.2s;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-self: flex-end;
+}
+
+.card:hover {
+    scale: 1.1 1.1;
+}
+
+.card:hover .line {
+    width: 100%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out-circ;
+}

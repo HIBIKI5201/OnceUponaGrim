@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/testCard.uss?fileID=7433441132597879392&amp;guid=b5b533c7f9737d44e9dae756ba2c3f58&amp;type=3#testCard" />
+    <ui:VisualElement name="Root" class="card">
+        <ui:VisualElement name="Line" class="line" />
+        <ui:VisualElement name="Thumbnail" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Triangle.png?fileID=2800000&amp;guid=5f7d49e25c745074abb8b68335903486&amp;type=3#Triangle&apos;); width: 140px; height: 140px; margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 30px;" />
+        <ui:VisualElement name="TextArea" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: center; -unity-font-definition: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#LegacyRuntime&apos;); color: rgb(255, 255, 255);">
+            <ui:Label tabindex="-1" text="name" display-tooltip-when-elided="true" name="Name" style="font-size: 32px; -unity-font-style: bold;" />
+            <ui:Label tabindex="-1" text="text" display-tooltip-when-elided="true" name="Description" style="white-space: normal; font-size: 24px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
