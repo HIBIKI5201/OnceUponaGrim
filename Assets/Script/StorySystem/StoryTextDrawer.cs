@@ -18,9 +18,9 @@ public class StoryTextListDrawer : PropertyDrawer
 
         StorySystem storySystem = (StorySystem)property.serializedObject.targetObject;
 
-        if (storySystem != null && storySystem.characterList != null)
+        if (storySystem != null && storySystem._characterList != null)
         {
-            string[] options = storySystem.characterList.Select(c => c.characterName).ToArray();
+            string[] options = storySystem._characterList.Select(c => c.characterName).ToArray();
             characterTypeProp.intValue = EditorGUI.Popup(position, "Character Type", characterTypeProp.intValue, options);
         }
 

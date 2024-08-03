@@ -6,62 +6,62 @@ using UnityEngine.UI;
 public class StorySystem : MonoBehaviour
 {
     [SerializeField]
-    Text textBox;
+    Text _textBox;
 
     [Header("オブジェクト")]
-    public List<StoryCharacterList> characterList = new()
+    public List<StoryCharacterList> _characterList = new()
     {
-        new StoryCharacterList { characterName = "effect"},
-        new StoryCharacterList { characterName = "Symphony" },
+        new StoryCharacterList { characterName = MainSystem._playerName},
+        new StoryCharacterList { characterName = "Grim" },
     };
 
     [SerializeField]
-    List<StoryTextList> textList = new();
+    List<StoryTextList> _textList = new();
 
-    readonly Dictionary<int, string> CharacterNames = new();
-    readonly Dictionary<int, Animator> Animators = new();
+    readonly Dictionary<int, string> _characterNames = new();
+    readonly Dictionary<int, Animator> _animators = new();
 
-    int textNumber;
+    int _textNumber;
 
     private void Start()
     {
         //CharacterNamesをリセットする
-        CharacterNames.Clear();
-        foreach (var character in characterList)
+        _characterNames.Clear();
+        foreach (var character in _characterList)
         {
-            CharacterNames.Add(Array.IndexOf(characterList.ToArray(), character), character.characterName);
+            _characterNames.Add(Array.IndexOf(_characterList.ToArray(), character), character.characterName);
         }
 
         //Animatorsをリセットする
-        Animators.Clear();
-        foreach (var character in characterList)
+        _animators.Clear();
+        foreach (var character in _characterList)
         {
             if (character.gameObject)
             {
                 if (character.gameObject.TryGetComponent<Animator>(out Animator animetor))
                 {
-                    Animators.Add(Array.IndexOf(characterList.ToArray(), character), animetor);
+                    _animators.Add(Array.IndexOf(_characterList.ToArray(), character), animetor);
                 }
                 else { Debug.LogWarning($"{character.gameObject.name}にAnimatorをアタッチしてください"); }
             }
             else { Debug.LogWarning($"{character}にオブジェクトをアサインしてください"); }
         }
 
-        if (textBox == null) { Debug.LogWarning("テキストボックスをアサインしてください"); }
+        if (_textBox == null) { Debug.LogWarning("テキストボックスをアサインしてください"); }
     }
 
     public void NextText()
     {
         // 喋っているキャラクターの名前を取得
-        Debug.Log(CharacterNames[textList[textNumber].characterType]);
+        Debug.Log(_characterNames[_textList[_textNumber].characterType]);
 
         //textListのkindに応じて動きを変える
-        switch (textList[textNumber].kind)
+        switch (_textList[_textNumber].kind)
         {
             case StoryTextList.TextKind.text:
 
                 //|を書くと改行する
-                string[] texts = textList[textNumber].text.Split('|');
+                string[] texts = _textList[_textNumber].text.Split('|');
                 string text = "";
 
                 foreach (var oneText in texts)
@@ -71,9 +71,9 @@ public class StorySystem : MonoBehaviour
                 }
 
                 Debug.Log(text);
-                if (textBox)
+                if (_textBox)
                 {
-                    textBox.text = text;
+                    _textBox.text = text;
                 }
 
                 break;
@@ -82,7 +82,7 @@ public class StorySystem : MonoBehaviour
             case StoryTextList.TextKind.move:
 
                 //対象のAnimatorにPlayメソッドを送る予定
-                Animators[textList[textNumber].characterType].Play(textList[textNumber].text);
+                _animators[_textList[_textNumber].characterType].Play(_textList[_textNumber].text);
 
                 break;
 
@@ -95,9 +95,9 @@ public class StorySystem : MonoBehaviour
         }
 
         //次のテキストにする
-        if (textList.Count - 1 > textNumber)
+        if (_textList.Count - 1 > _textNumber)
         {
-            textNumber++;
+            _textNumber++;
         }
         else { Debug.LogWarning("テキストは終了しました"); }
     }
